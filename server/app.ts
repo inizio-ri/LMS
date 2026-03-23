@@ -12,6 +12,7 @@ import analyticsRouter from "./routes/analytics.route";
 import layoutRouter from "./routes/layout.route";
 import { rateLimit } from 'express-rate-limit'
 
+
 // body parser
 app.use(express.json({ limit: "50mb" }));
 
@@ -36,8 +37,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-// ✅ IMPORTANT: use SAME config here
 app.options("*", cors(corsOptions));
 
 
@@ -48,6 +47,18 @@ const limiter = rateLimit({
 	standardHeaders: 'draft-7', 
 	legacyHeaders: false, 
 })
+
+app.use((req, res, next) => {
+const origin = req.headers.origin;
+
+if (origin && (origin.includes("vercel.app") || origin.includes("localhost"))) {
+  res.header("Access-Control-Allow-Origin", origin);
+  }
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Methods", "*");
+  next();
+});
 
 // routes
 app.use(
