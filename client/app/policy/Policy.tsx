@@ -12,7 +12,7 @@ const Policy = (props: Props) => {
         </h1>
       <ul style={{ listStyle: "unset", marginLeft: "15px" }}>
       <p className="py-2 ml-[-15px] text-[16px] font-Poppins leading-8 whitespace-pre-line">
-      The platform may occasionally experience downtime for maintenance or updates, and we strive to keep these interruptions minimal. However, we are not liable for any temporary unavailability or data loss caused due to system failures, maintenance, or unforeseen technical issues. While we aim to provide a seamless and secure learning environment, the platform is offered on an “as is” basis, and we do not guarantee uninterrupted or error-free access.
+      The platform may occasionally experience downtime for maintenance or updates, and we strive to keep these interruptions minimal. However, we are not liable for any temporary unavailability or data loss caused due to system failures, maintenance, or unforeseen technical issues. While we aim to provide a seamless and secure learning environment, the platform is offered on an "as is" basis, and we do not guarantee uninterrupted or error-free access.
         </p>
         <br />
         <p className="py-2 ml-[-15px] text-[16px] font-Poppins leading-8 whitespace-pre-line">
