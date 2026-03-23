@@ -34,6 +34,12 @@ export const ErrorMiddleware = (
     err = new ErrorHandler(message, 400);
   }
 
+  const origin = req.headers.origin;
+  if (origin) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+  res.header("Access-Control-Allow-Credentials", "true");
+  
   res.status(err.statusCode).json({
     success: false,
     message: err.message,
